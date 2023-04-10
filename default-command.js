@@ -46,7 +46,7 @@ function runCommand() {
       } else if (commandText === 'df') {
         div.innerHTML = `
           <b class="typing">Digital Fingerprint:</b>
-          <p class="typing">This website demonstrates the power of web browsers and the concept of digital fingerprint. When you visit any website, they has the ability to collect and store various information about you, such as your location, browser details, browsing habits, online activities, and device information, which can be a threat to your privacy. To create awareness and educate users about these risks I have created this website, which provides a visual representation of the data that can be collected by websites. Through this information, I want to encourage you to exercise caution when visiting unknown or unsafe websites. Rest assured, I do not collect or store any of your data on the my server.</p>
+          <p class="typing">This website demonstrates the power of web browsers and the concept of browser fingerprinting. When you visit any website, they has the ability to collect and store various information about you, such as your location, browser details, browsing habits, online activities, and device information, which can be a threat to your privacy. To create awareness and educate users about these risks I have created this website, which provides a visual representation of the data that can be collected by websites. Through this information, I want to encourage you to exercise caution when visiting unknown or unsafe websites. Rest assured, I do not collect or store any of your data on the my server.</p>
           <div class="command-line typing">
             <span class="prompt"><b>root@df:</b>~$</span>
             <input type="text" class="command" oninput="inputData(event)">
