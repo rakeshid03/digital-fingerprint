@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061a32">
+
+  <!-- Page title -->
+  <title>Digital Fingerprint</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/jpg" href="logo.png" />
+
+  <!-- Custom stylesheet & font family -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+
+<body ontouchstart="countTouches(event)" ontouchend="countTouches(event)">
+
+  <!-- Full terminal -->
+  <div class="terminal">
+    <div class="header">
+      <div class="buttons">
+        <div class="button red"></div>
+        <div class="button yellow"></div>
+        <div class="button green"></div>
+      </div>
+      <p id="df">root@df:~</p>
+    </div>
+    <div class="screen">
+      <div class="output"></div>
+    </div>
+  </div>
+
+  <!-- Js file
+  1. Collecting data
+  2. Return in output
+  3. Default commands for users help
+  -->
+  <script src="collect-data.js"></script>
+  <script src="print-data.js"></script>
+  <script src="default-command.js"></script>
+</body>
+
+</html>
