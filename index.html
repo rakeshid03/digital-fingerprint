@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#061a32" />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#061a32">
+    <!-- Page seo tags -->
+    <title>Digital Fingerprint</title>
+    <meta
+      name="description"
+      content="To create awareness and educate people about the browser fingerprint, I have created this website, which provides a visual representation of the data that can be collected by websites."
+    />
+    <meta
+      name="keywords"
+      content="privacy, Browser Fingerprint, Javascript Project, Digital Fingerprint, Browser Hash, Browser Fingerprinting, Browser Identification, Web Tracking Techniques, Unique Browser Signature, Browser Profiling, Fingerprinting Techniques, Browser Privacy, Device Fingerprinting, Browser Security, Tracking Prevention, Anti-Fingerprinting Measures, Web Privacy, User Agent String, Canvas Fingerprinting, Audio Fingerprinting, WebGL Fingerprinting, Font Fingerprinting, JavaScript Fingerprinting, HTML5 Fingerprinting"
+    />
+    <link
+      rel="canonical"
+      href="https://rakeshid03.github.io/digital-fingerprint/"
+    />
+    <meta name="author" content="Rakeshid03" />
 
-  <!-- Page seo tags -->
-  <title>Digital Fingerprint</title>
-  <meta name="description" content="To create awareness and educate people about the browser fingerprint, I have created this website, which provides a visual representation of the data that can be collected by websites.">
-  <meta name="keywords" content="privacy, Browser Fingerprint, Javascript Project, Digital Fingerprint, Browser Hash, Browser Fingerprinting, Browser Identification, Web Tracking Techniques, Unique Browser Signature, Browser Profiling, Fingerprinting Techniques, Browser Privacy, Device Fingerprinting, Browser Security, Tracking Prevention, Anti-Fingerprinting Measures, Web Privacy, User Agent String, Canvas Fingerprinting, Audio Fingerprinting, WebGL Fingerprinting, Font Fingerprinting, JavaScript Fingerprinting, HTML5 Fingerprinting">
-  <link rel="canonical" href="https://rakeshid03.github.io/digital-fingerprint/">
-  <meta name="author" content="Rakeshid03">
+    <!-- Meta Tags For Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Digital Fingerprint" />
+    <meta
+      property="og:description"
+      content="To create awareness and educate people about the browser fingerprint, I have created this website, which provides a visual representation of the data that can be collected by websites."
+    />
+    <meta
+      property="og:url"
+      content="https://rakeshid03.github.io/digital-fingerprint/"
+    />
+    <meta property="og:image" content="./assets/banner.jpg" />
 
-  <!-- Meta Tags For Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Digital Fingerprint">
-  <meta property="og:description" content="To create awareness and educate people about the browser fingerprint, I have created this website, which provides a visual representation of the data that can be collected by websites.">
-  <meta property="og:url" content="https://rakeshid03.github.io/digital-fingerprint/">
-  <meta property="og:image" content="banner.jpg">
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="./assets/digital-fingerprint.png"
+    />
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/jpg" href="digital-fingerprint.png" />
+    <!-- Custom stylesheet & font family -->
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <!-- Custom stylesheet & font family -->
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
-</head>
-
-<body ontouchstart="countTouches(event)" ontouchend="countTouches(event)">
-
-  <!-- Full terminal -->
-  <div class="terminal">
-    <div class="header">
-      <div class="buttons">
-        <div class="button red"></div>
-        <div class="button yellow"></div>
-        <div class="button green"></div>
+  <body ontouchstart="countTouches(event)" ontouchend="countTouches(event)">
+    <!-- Full terminal -->
+    <div class="terminal">
+      <div class="header">
+        <div class="buttons">
+          <div class="button red"></div>
+          <div class="button yellow"></div>
+          <div class="button green"></div>
+        </div>
+        <p id="df">root@df:~</p>
       </div>
-      <p id="df">root@df:~</p>
+      <div class="screen">
+        <div class="output"></div>
+      </div>
     </div>
-    <div class="screen">
-      <div class="output"></div>
-    </div>
-  </div>
 
-  <!-- Js file
+    <!-- Js file
   1. Collecting data
   2. Return in output
   3. Default commands for users help
   -->
-  <script src="collect-data.js"></script>
-  <script src="print-data.js"></script>
-  <script src="default-command.js"></script>
-</body>
-
+    <script src="./src/js/collect-data.js"></script>
+    <script src="./src/js/print-data.js"></script>
+    <script src="./src/js/default-command.js"></script>
+  </body>
 </html>
