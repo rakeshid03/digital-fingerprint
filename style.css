@@ -1,0 +1,186 @@
+/* Define custom CSS variables */
+:root {
+  --font-fira-mono: 'Fira Mono', monospace;
+  --font-fira-code: 'Fira Code', monospace;
+  --text-shadow: 0px 0px 0.9px #32CD32;
+  --color-bg: #2c2f33;
+  --color-fg: #fff;
+  --color-primary: #32CD32;
+  --color-selection-text: #111;
+}
+
+/* Reset default styles for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14.8px;
+}
+
+/* Style for selected text */
+::selection {
+  color: #111;
+  background: #32CD32;
+  text-shadow: var(--text-shadow);
+}
+
+/* Style for body */
+body {
+  background-color: #061a32;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-fira-mono);
+}
+
+/* Bold text styles */
+b {
+  font-family: var(--font-fira-mono);
+  text-shadow: var(--text-shadow);
+  letter-spacing: 0.8px;
+  font-size: 15px;
+}
+
+/* Style the header element */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #333444;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo styles */
+#df {
+  width: auto;
+  text-align: center;
+  letter-spacing: 0.8px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* Button container styles */
+.buttons {
+  position: absolute;
+  left: 0;
+  display: flex;
+}
+
+/* Button styles */
+.button {
+  width: 14px;
+  height: 14px;
+  margin-left: 12px;
+  border-radius: 50%;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 7px #6C6E91;
+  border: 1px solid #56576C;
+  transform: scale(1.1);
+}
+
+/* Style the buttons with different colors */
+.red {
+  background-color: #ff5f56;
+}
+
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #27c93f;
+}
+
+/* Style for terminal screen */
+.screen {
+  position: fixed;
+  background: #111;
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 60px 10px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #444 #111;
+}
+
+/* Command line styles */
+.command-line {
+  display: flex;
+  margin-bottom: 3px;
+}
+
+/* Prompt styles */
+.prompt {
+  color: #00ff00;
+  text-shadow: var(--text-shadow);
+}
+
+/* Style the input text field */
+input[type=text] {
+  font-family: var(--font-fira-code);
+  text-transform: lowercase;
+  color: #fff;
+  background-color: #111;
+  caret-color: #32CD32;
+  margin-left: 5px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+/* Style the output element */
+.output {
+  color: #00FF00;
+  line-height: 24px;
+  overflow: hidden;
+  font-family: var(--font-fira-code);
+}
+
+/* Style the typing animation */
+.typing {
+  animation: type 480ms linear;
+  color: #00ff00;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+/* Define keyframes for typing animation */
+@keyframes type {
+  0% {
+    width: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  1% {
+    width: 1%;
+    white-space: nowrap;
+  }
+
+  50% {
+    width: 50%;
+    white-space: nowrap;
+  }
+
+  95% {
+    width: 95%;
+    white-space: nowrap;
+  }
+
+  97% {
+    width: 97%;
+    white-space: initial;
+    word-wrap: break-word;
+  }
+
+  100% {
+    width: 100%;
+    white-space: initial;
+    word-wrap: break-word;
+  }
+}
