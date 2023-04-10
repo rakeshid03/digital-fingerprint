@@ -1,11 +1,11 @@
 /* Define custom CSS variables */
 :root {
-  --font-fira-mono: 'Fira Mono', monospace;
-  --font-fira-code: 'Fira Code', monospace;
-  --text-shadow: 0px 0px 0.9px #32CD32;
+  --font-fira-mono: "Fira Mono", monospace;
+  --font-fira-code: "Fira Code", monospace;
+  --text-shadow: 0px 0px 0.9px #32cd32;
   --color-bg: #2c2f33;
   --color-fg: #fff;
-  --color-primary: #32CD32;
+  --color-primary: #32cd32;
   --color-selection-text: #111;
 }
 
@@ -20,7 +20,7 @@
 /* Style for selected text */
 ::selection {
   color: #111;
-  background: #32CD32;
+  background: #32cd32;
   text-shadow: var(--text-shadow);
 }
 
@@ -78,8 +78,8 @@ b {
 }
 
 .button:hover {
-  box-shadow: 0px 0px 7px #6C6E91;
-  border: 1px solid #56576C;
+  box-shadow: 0px 0px 7px #6c6e91;
+  border: 1px solid #56576c;
   transform: scale(1.1);
 }
 
@@ -121,12 +121,12 @@ b {
 }
 
 /* Style the input text field */
-input[type=text] {
+input[type="text"] {
   font-family: var(--font-fira-code);
   text-transform: lowercase;
   color: #fff;
   background-color: #111;
-  caret-color: #32CD32;
+  caret-color: #32cd32;
   margin-left: 5px;
   width: 100%;
   outline: none;
@@ -135,7 +135,7 @@ input[type=text] {
 
 /* Style the output element */
 .output {
-  color: #00FF00;
+  color: #00ff00;
   line-height: 24px;
   overflow: hidden;
   font-family: var(--font-fira-code);
