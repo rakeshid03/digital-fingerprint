@@ -1,85 +1,101 @@
 /* Define custom CSS variables */
 :root {
-  --font-fira-mono: "Fira Mono", monospace;
-  --font-fira-code: "Fira Code", monospace;
-  --text-shadow: 0px 0px 0.9px #32cd32;
-  --color-bg: #2c2f33;
-  --color-fg: #fff;
+  --color-bg: #061a32;
+  --color-default: #fff;
+  --color-fg: #333444;
   --color-primary: #32cd32;
   --color-selection-text: #111;
+  --color-text: #2db82d;
+  --font-fira-code: "Fira Code", monospace;
+  --font-fira-mono: "Fira Mono", monospace;
+  --text-shadow: 0px 0px 0.9px #32cd32;
 }
 
 /* Reset default styles for all elements */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-size: 14.8px;
+  margin: 0;
+  padding: 0;
 }
 
 /* Style for selected text */
 ::selection {
-  color: #111;
-  background: #32cd32;
+  background: var(--color-primary);
+  color: var(--color-selection-text);
   text-shadow: var(--text-shadow);
+}
+
+/* Style for scrollbar */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  margin: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-fg);
 }
 
 /* Style for body */
 body {
-  background-color: #061a32;
-  color: #fff;
-  width: 100%;
-  height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-default);
   font-family: var(--font-fira-mono);
+  height: 100%;
+  width: 100%;
 }
 
 /* Bold text styles */
 b {
+  color: var(--color-primary);
   font-family: var(--font-fira-mono);
-  text-shadow: var(--text-shadow);
-  letter-spacing: 0.8px;
   font-size: 15px;
+  letter-spacing: 0.8px;
+  text-shadow: var(--text-shadow);
 }
 
 /* Style the header element */
 .header {
+  align-items: center;
+  background-color: var(--color-fg);
+  display: flex;
+  height: 43px;
+  justify-content: center;
   position: sticky;
   top: 0;
+  user-select: none;
   width: 100%;
-  background-color: #333444;
-  height: 43px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Logo styles */
 #df {
-  width: auto;
-  text-align: center;
-  letter-spacing: 0.8px;
   font-size: 17px;
   font-weight: bold;
+  letter-spacing: 0.8px;
+  text-align: center;
+  width: auto;
 }
 
 /* Button container styles */
 .buttons {
-  position: absolute;
-  left: 0;
   display: flex;
+  left: 0;
+  position: absolute;
 }
 
 /* Button styles */
 .button {
-  width: 14px;
+  border-radius: 50%;
   height: 14px;
   margin-left: 12px;
-  border-radius: 50%;
+  width: 14px;
 }
 
 .button:hover {
-  box-shadow: 0px 0px 7px #6c6e91;
   border: 1px solid #56576c;
+  box-shadow: 0px 0px 7px #6c6e91;
   transform: scale(1.1);
 }
 
@@ -98,14 +114,14 @@ b {
 
 /* Style for terminal screen */
 .screen {
-  position: fixed;
-  background: #111;
-  width: 100%;
+  background: var(--color-selection-text);
   height: 100%;
-  padding: 10px 10px 60px 10px;
   overflow-y: scroll;
+  padding: 10px 10px 60px 10px;
+  position: fixed;
+  scrollbar-color: #444 var(--color-selection-text);
   scrollbar-width: thin;
-  scrollbar-color: #444 #111;
+  width: 100%;
 }
 
 /* Command line styles */
@@ -116,35 +132,35 @@ b {
 
 /* Prompt styles */
 .prompt {
-  color: #00ff00;
+  color: var(--color-text);
   text-shadow: var(--text-shadow);
 }
 
 /* Style the input text field */
 input[type="text"] {
-  font-family: var(--font-fira-code);
-  text-transform: lowercase;
-  color: #fff;
-  background-color: #111;
-  caret-color: #32cd32;
-  margin-left: 5px;
-  width: 100%;
-  outline: none;
+  background-color: var(--color-selection-text);
   border: none;
+  caret-color: var(--color-primary);
+  color: var(--color-default);
+  font-family: var(--font-fira-code);
+  margin-left: 5px;
+  outline: none;
+  text-transform: lowercase;
+  width: 100%;
 }
 
 /* Style the output element */
 .output {
-  color: #00ff00;
+  color: var(--color-text);
+  font-family: var(--font-fira-code);
   line-height: 24px;
   overflow: hidden;
-  font-family: var(--font-fira-code);
 }
 
 /* Style the typing animation */
 .typing {
   animation: type 480ms linear;
-  color: #00ff00;
+  color: var(--color-text);
   overflow: hidden;
   word-wrap: break-word;
 }
@@ -152,35 +168,30 @@ input[type="text"] {
 /* Define keyframes for typing animation */
 @keyframes type {
   0% {
-    width: 0%;
-    white-space: nowrap;
     overflow: hidden;
+    white-space: nowrap;
+    width: 0%;
   }
-
   1% {
+    white-space: nowrap;
     width: 1%;
-    white-space: nowrap;
   }
-
   50% {
+    white-space: nowrap;
     width: 50%;
-    white-space: nowrap;
   }
-
   95% {
-    width: 95%;
     white-space: nowrap;
+    width: 95%;
   }
-
   97% {
-    width: 97%;
     white-space: initial;
+    width: 97%;
     word-wrap: break-word;
   }
-
   100% {
-    width: 100%;
     white-space: initial;
+    width: 100%;
     word-wrap: break-word;
   }
 }
