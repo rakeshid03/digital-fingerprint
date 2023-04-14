@@ -45,6 +45,9 @@ function runPrint() {
         `
          <b>Screen size:</b> ${ScreenSize}
          `,
+         `
+         <b>Viewport size:</b> ${viewportSize}
+         `,
         `
          <b>Device pixel ratio:</b> ${devicePixelRatio}
          `,
