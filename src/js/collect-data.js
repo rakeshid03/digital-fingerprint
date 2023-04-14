@@ -167,8 +167,6 @@ function monitorFrameRate() {
     frameCount = 0;
     startTime = currentTime;
   }
-
-  // 🔥 Solution of continuous update 🔥
   const frameCountElement = document.getElementById("frame-count");
   if (frameCountElement) {
     frameCountElement.innerText = frameRate;
@@ -208,6 +206,9 @@ if (window.performance && window.performance.memory) {
   var memoryTotal = memory.totalJSHeapSize / 1048576; // convert bytes to MB
   Memoryused = memoryUsed.toFixed(2) + "MB";
   Memorytotal = memoryTotal.toFixed(2) + "MB";
+} else {
+  Memoryused = 'N/A';
+  Memorytotal = 'N/A';
 }
 
 // Get Timing taken to load Page:
@@ -237,6 +238,24 @@ fetch("https://ipapi.co/json/")
     Currency = data.currency_name;
     Languages = data.languages;
     ASN = data.asn;
+  })
+  .catch(error => {
+    console.error('Error fetching IP data:', error);
+    Latitude = 'N/A';
+    Longitude = 'N/A';
+    Region = 'N/A';
+    City = 'N/A';
+    Country = 'N/A';
+    IPS = 'N/A';
+    Ip = 'N/A';
+    ipVersion = 'N/A';
+    Regioncode = 'N/A';
+    Countrycode = 'N/A';
+    countryCapital = 'N/A';
+    CountryCallingCode = 'N/A';
+    Currency = 'N/A';
+    Languages = 'N/A';
+    ASN = 'N/A';
   });
 
 // Get OS version
@@ -330,6 +349,11 @@ if (/mobile|android/i.test(userAgent)) {
 const screenWidth = window.screen.width;
 const screenHeight = window.screen.height;
 ScreenSize = `${screenHeight}x${screenWidth}`;
+
+// Get Viewport Size
+const viewportWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+const viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+const viewportSize = `${viewportHeight}x${viewportWidth}`;
 
 // Get Browser version
 const regex = /(?:MSIE|Edge|Opera|Firefox|Chrome|Safari)[\/\s](\d+\.\d+)/;
