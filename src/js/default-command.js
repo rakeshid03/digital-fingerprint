@@ -87,3 +87,13 @@ function runCommand() {
   // Scroll to the bottom of the output element
   screen.scrollTop = output.scrollHeight;
 }
+
+
+// Browser title change on tab change
+let docTitle = document.title;
+window.addEventListener("blur", () => {
+  document.title = "Come back :(";
+});
+window.addEventListener("focus", () => {
+  document.title = docTitle;
+});
