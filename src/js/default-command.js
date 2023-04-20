@@ -1,3 +1,28 @@
+// Get Current Location
+var Latitude;
+var Longitude;
+
+// Show current location on leaflet map
+function showMap() {
+  var div = document.createElement('div');
+  div.innerHTML = `<div id="map"></div>
+    
+   <div class="command-line typing">
+   <span class="prompt"><b>root@df:</b>~$</span>
+   <input type="text" class="command" oninput="inputData(event)">
+   </div>`;
+  output.appendChild(div);
+
+  const map = L.map('map').setView([Latitude, Longitude], 12.5);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+  L.marker([Latitude, Longitude]).addTo(map)
+    .openPopup();
+
+  var newInput = div.querySelector('.command').focus();
+  screen.scrollTop = output.scrollHeight;
+};
+
+
 // Function to run a command
 function runCommand() {
   // Create a new div element and append
@@ -11,6 +36,17 @@ function runCommand() {
   output.appendChild(div);
   // Set focus on the new input element
   var newInput = div.querySelector(".command").focus();
+ 
+// Current location using geolocation api
+   if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      Latitude = position.coords.latitude;
+      Longitude = position.coords.longitude;
+    }, error => {
+      console.error("Error getting location using Geolocation API: ", error);
+    });
+  };
+
 
   // Add event listener for keydown event on the output element
   output.addEventListener("keydown", function (e) {
@@ -36,6 +72,7 @@ function runCommand() {
             <li>help - show all available commands</li>
             <li>df - all about digital fingerprint</li>
             <li>pip install df - run this to see your digital fingerprint</li>
+            <li>location - your location on map</li>
             <li>clear - clear terminal</li>
           </ul>
           <div class="command-line typing">
@@ -59,6 +96,8 @@ function runCommand() {
       <div id="progress-bar" style="width: 0%; background-color: #00ff00; transition: all 0.9s ease; height: 5px; margin-bottom: 8px;"></div>
           `;
         runPrint();
+      } else if (commandText === 'location') {
+        showMap();
       } else if (commandText === "clear") {
         output.innerHTML = "";
 
