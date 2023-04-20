@@ -69,11 +69,11 @@ function runCommand() {
         div.innerHTML = `
           <b class="typing">Available commands:</b>
           <ul class="typing">
-            <li>help - show all available commands</li>
-            <li>df - all about digital fingerprint</li>
-            <li>pip install df - run this to see your digital fingerprint</li>
-            <li>location - your location on map</li>
-            <li>clear - clear terminal</li>
+            <li>help - shows all available commands.</li>
+            <li>df - Provides information about digital fingerprinting.</li>
+            <li>pip install df - Displays your digital fingerprint.</li>
+            <li>location - Shows your current location on a map.</li>
+            <li>clear - Clears the terminal screen.</li>
           </ul>
           <div class="command-line typing">
             <span class="prompt"><b>root@df:</b>~$</span>
