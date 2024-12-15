@@ -200,6 +200,8 @@ document.addEventListener("click", function (event) {
 });
 
 // Get Memory usage
+var Memoryused;
+var Memorytotal;
 if (window.performance && window.performance.memory) {
   var memory = window.performance.memory;
   var memoryUsed = memory.usedJSHeapSize / 1048576; // convert bytes to MB
