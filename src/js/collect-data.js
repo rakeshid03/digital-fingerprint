@@ -209,7 +209,7 @@ if (window.performance && window.performance.memory) {
 } else {
   Memoryused = 'N/A';
   Memorytotal = 'N/A';
-}
+};
 
 // Get Timing taken to load Page:
 var PageLoadTime;
