@@ -6,10 +6,10 @@ const userAgent = navigator.userAgent;
 // Get user's Device Model Name
 if (userAgent.includes("Android")) {
   // User is using an Android device
-  const match = userAgent.match(/Android [\d.]+;.*?([a-zA-Z0-9\s]+Build)/);
+  const match = userAgent.match(/Android [\d.]+; ([a-zA-Z0-9\s]+)/);
   if (match) {
-    deviceName = match[1].replace(' Build', '');
-  }
+    deviceName = match[1];
+    
 } else if (userAgent.includes("iPhone") || userAgent.includes("iPad")) {
   // User is using an iOS device
   const match = userAgent.match(/\(([a-zA-Z0-9\s]+);/);
