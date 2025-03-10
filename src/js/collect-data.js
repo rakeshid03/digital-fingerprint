@@ -2,6 +2,7 @@
 //--------------------------------------
 
 const userAgent = navigator.userAgent;
+var deviceName = 'unknown';
 // Get user's Device Model Name
 if (userAgent.includes("Android")) {
   // User is using an Android device
