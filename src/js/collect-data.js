@@ -110,6 +110,10 @@ function countTouches(event) {
     fingerTouched.innerText = fingersTouch;
   }
 }
+// Attach event listener
+document.addEventListener('touchstart', countTouches);
+document.addEventListener('touchmove', countTouches);
+document.addEventListener('touchend', countTouches);
 
 // Get Browser plugins
 if ("plugins" in navigator) {
