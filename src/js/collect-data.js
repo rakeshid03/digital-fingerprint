@@ -3,7 +3,6 @@
 
 const userAgent = navigator.userAgent;
 var deviceName = 'unknown';
-var countTouches = 0;
 // Get user's Device Model Name
 if (userAgent.includes("Android")) {
   // User is using an Android device
