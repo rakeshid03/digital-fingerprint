@@ -104,18 +104,7 @@ if ('deviceMemory' in navigator) {
 // Get use fingers to touch screen
 var fingersTouch = 0;
 
-function countTouches(event) {
-  fingersTouch = event.touches.length;
-  var fingerTouched = document.getElementById('fingers-Touched');
-  if (fingerTouched) {
-    fingerTouched.innerText = fingersTouch;
-  }
-};
 
-// Attach event listener
-document.addEventListener('touchstart', countTouches);
-document.addEventListener('touchmove', countTouches);
-document.addEventListener('touchend', countTouches);
 
 
 // Get Browser plugins
