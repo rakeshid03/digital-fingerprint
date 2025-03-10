@@ -101,12 +101,11 @@ if ("deviceMemory" in navigator) {
 }
 
 // Get use fingers to touch screen
-var fingersTouch;
+var fingersTouch = 0;
 
 function countTouches(event) {
   fingersTouch = event.touches.length;
-
-  const fingerTouched = document.getElementById("fingers-Touched");
+  var fingerTouched = document.getElementById("fingers-Touched");
   if (fingerTouched) {
     fingerTouched.innerText = fingersTouch;
   }
