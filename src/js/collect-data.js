@@ -4,8 +4,13 @@
 const userAgent = navigator.userAgent;
 // Get user's Device Model Name
 
-var deviceName = 'unknown';
-if (userAgent.includes("Android")) {
+var deviceName = 'Detecting...';
+
+if (navigator.userAgentData) {  
+  navigator.userAgentData.getHighEntropyValues(["model"]).then(data => {  
+    deviceName = data.model || "unknown";  
+  });  
+} else if (userAgent.includes("Android")) {
   // User is using an Android device
   const match = userAgent.match(/Android [\d.]+;.*?([a-zA-Z0-9\s]+Build)/);
   if (match) {
