@@ -265,11 +265,16 @@ function runPrint() {
          <b>Mouse Y:</b> <span id="mouseYValue">${MouseY}</span>
          `,
         `
+        
+
          <b>Input Text:</b> <span id="typed-Text">null</span>
          `,
         `
          <b>Input Activity:</b> <span id="input-Activity">null</span>
          `,
+         `<b>Time spent on page:</b> <span id="time-spent">0 seconds</span>`,
+         
+         `<b>Private Browsing:</b> ${isPrivate}`,
       ];
 
       // This code adds the results to the 'output' element one by one, with a typing effect.

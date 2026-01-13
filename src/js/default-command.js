@@ -106,7 +106,20 @@ function runCommand() {
             <span class="prompt"><b>root@df:</b>~$</span>
             <input type="text" class="command" oninput="inputData(event)" placeholder="type help">
           </div>`;
-      } else {
+      } 
+      // ----- Contribution
+      else if (commandText === "download") {
+        const text = document.querySelector('.output').innerText;
+        const element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', 'my-fingerprint.txt');
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+        div.innerHTML = `<p>Report downloaded successfully.</p>`;
+      }  
+      else {
         // If the command is invalid, display an error message
         div.innerHTML = `
           <b class="typing" style="color: #f00; text-shadow: 0px 0px 0.9px #f00;">Invalid command:</b>
