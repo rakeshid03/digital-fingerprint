@@ -290,6 +290,15 @@ if (prefersDarkMode) {
   UserPrefers = 'white mode';
 }
 
+// Detect Private/Incognito Mode --(Contribution)
+let isPrivate = "Unknown";
+const fs = window.RequestFileSystem || window.webkitRequestFileSystem;
+if (!fs) {
+  isPrivate = "Possibly (FS API blocked)";
+} else {
+  fs(window.TEMPORARY, 100, () => { isPrivate = "No"; }, () => { isPrivate = "Yes"; });
+}
+
 
 // Get browser name
 if (userAgent.indexOf("Firefox") > -1) {
@@ -565,3 +574,15 @@ function inputData(event) {
     inputactivity.innerText = inputActivity;
   }
 };
+
+
+// Get time spent on page - (Contribution)
+let secondsSpent = 0;
+setInterval(() => {
+  secondsSpent++;
+  const timeSpentElement = document.getElementById('time-spent');
+  if (timeSpentElement) {
+    timeSpentElement.innerText = secondsSpent + " seconds";
+  }
+}, 1000);
+
